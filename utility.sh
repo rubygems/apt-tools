@@ -4,7 +4,7 @@ export APTLY=$(which aptly)
 
 function get_dated_snapshot_name() {
   NAME=$1
-  DATE=$(date +"%m%d%Y")
+  DATE=$(date + "%m%d%Y%H%m%S")
 
   echo "${NAME}-${DATE}"
 }
