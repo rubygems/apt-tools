@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. utility.sh
+. ./utility.sh
 
 SNAPSHOT=$(get_dated_snapshot_name sensu)
 
