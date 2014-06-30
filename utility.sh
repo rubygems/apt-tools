@@ -11,9 +11,15 @@ function get_dated_snapshot_name() {
 
 function create_snapshot_from_name() {
   NAME=$1
-  SNAPSHOT=$(get_dated_snapshot_name $1)
+  MIRROR=$2
 
   $APTLY snapshot create $SNAPSHOT from mirror $NAME
+}
+
+function publish_snapshot_from_name() {
+  NAME=$1
+  
+  $APTLY publish snapshot $NAME
 }
 
 function get_ubuntu_repos() {
