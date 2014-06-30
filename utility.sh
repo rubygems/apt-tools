@@ -16,6 +16,12 @@ function create_snapshot_from_name() {
   $APTLY snapshot create $SNAPSHOT from mirror $NAME
 }
 
+function drop_published_mirror() {
+  NAME=$1
+
+  $APTLY publish drop $NAME
+}
+
 function publish_snapshot_from_name() {
   NAME=$1
   
