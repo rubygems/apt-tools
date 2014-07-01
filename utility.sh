@@ -33,6 +33,10 @@ function publish_snapshot_from_name() {
   $APTLY publish snapshot -distribution="${DISTRO}" $NAME
 }
 
+function get_all_repos() {
+  $APTLY mirror list | awk 'NR>1{print $1}' RS='[' FS=']:'
+}
+
 function get_ubuntu_repos() {
-  $APTLY mirror list | grep ubuntu | awk 'NR>1{print $1}' RS='[' FS=']:'
+  get_all_repos | grep ubuntu
 }
