@@ -17,7 +17,7 @@ function create_snapshot_from_name() {
   NAME=$1
   MIRROR=$2
 
-  $APTLY snapshot create $SNAPSHOT from mirror $NAME
+  $APTLY snapshot create $NAME from mirror $MIRROR
 }
 
 function drop_published_mirror() {
@@ -28,8 +28,9 @@ function drop_published_mirror() {
 
 function publish_snapshot_from_name() {
   NAME=$1
-  
-  $APTLY publish snapshot $NAME
+  DISTRO=$2
+
+  $APTLY publish snapshot -distribution="${DISTRO}" $NAME
 }
 
 function get_ubuntu_repos() {
