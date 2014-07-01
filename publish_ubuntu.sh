@@ -8,7 +8,7 @@ MAIN=$(get_dated_snapshot_name ubuntu-trusty-main)
 SECURITY_MAIN=$(get_dated_snapshot_name ubuntu-trusty-security-main)
 UNIVERSE=$(get_dated_snapshot_name ubuntu-trusty-universe)
 UPDATES_MAIN=$(get_dated_snapshot_name ubuntu-trusty-updates-main)
-COMBINED=$(get_dated_sanpshot_name trusty)
+COMBINED=$(get_dated_snapshot_name trusty)
 
 $APTLY spapshot merge $COMBINED $MAIN $SECURITY_MAIN $UNIVERSE $UPDATES_MAIN
 
